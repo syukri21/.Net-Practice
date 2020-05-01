@@ -23,7 +23,6 @@
 
     Private Sub AddButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddButton.Click
         If addButtonType Then
-
             Me.ClientsTableAdapter.InsertQuery(First_nameTextBox1.Text, Last_nameTextBox1.Text, PhoneTextBox1.Text, EmailTextBox1.Text)
             AddButton.Text = "New"
             addButtonType = False
@@ -52,6 +51,9 @@
         Me.fetch()
     End Sub
 
-  
-   
+
+    Private Sub RoomsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RoomsToolStripMenuItem.Click
+        Me.Close()
+        ManagementRooms.Show()
+    End Sub
 End Class

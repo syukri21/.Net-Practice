@@ -22,6 +22,7 @@ Partial Class ManagementRooms
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
@@ -39,7 +40,20 @@ Partial Class ManagementRooms
         Me.ClientsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.RoomsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ReservationsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.HotelsDataSet = New HotelManagements.hotelsDataSet
+        Me.RoomsTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RoomsTableTableAdapter = New HotelManagements.hotelsDataSetTableAdapters.RoomsTableTableAdapter
+        Me.TableAdapterManager = New HotelManagements.hotelsDataSetTableAdapters.TableAdapterManager
+        Me.RoomsTableDataGridView = New System.Windows.Forms.DataGridView
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.HotelsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RoomsTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RoomsTableDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -176,7 +190,7 @@ Partial Class ManagementRooms
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientsToolStripMenuItem, Me.RoomsToolStripMenuItem, Me.ReservationsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(686, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(784, 24)
         Me.MenuStrip1.TabIndex = 15
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -198,12 +212,74 @@ Partial Class ManagementRooms
         Me.ReservationsToolStripMenuItem.Size = New System.Drawing.Size(85, 20)
         Me.ReservationsToolStripMenuItem.Text = "Reservations"
         '
+        'HotelsDataSet
+        '
+        Me.HotelsDataSet.DataSetName = "hotelsDataSet"
+        Me.HotelsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'RoomsTableBindingSource
+        '
+        Me.RoomsTableBindingSource.DataMember = "RoomsTable"
+        Me.RoomsTableBindingSource.DataSource = Me.HotelsDataSet
+        '
+        'RoomsTableTableAdapter
+        '
+        Me.RoomsTableTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.UpdateOrder = HotelManagements.hotelsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'RoomsTableDataGridView
+        '
+        Me.RoomsTableDataGridView.AutoGenerateColumns = False
+        Me.RoomsTableDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.RoomsTableDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
+        Me.RoomsTableDataGridView.DataSource = Me.RoomsTableBindingSource
+        Me.RoomsTableDataGridView.Location = New System.Drawing.Point(266, 46)
+        Me.RoomsTableDataGridView.Name = "RoomsTableDataGridView"
+        Me.RoomsTableDataGridView.Size = New System.Drawing.Size(506, 229)
+        Me.RoomsTableDataGridView.TabIndex = 16
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "number"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "number"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "type"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "type"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "phone"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "phone"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "reserved"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "reserved"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
         'ManagementRooms
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GrayText
-        Me.ClientSize = New System.Drawing.Size(686, 293)
+        Me.ClientSize = New System.Drawing.Size(784, 293)
+        Me.Controls.Add(Me.RoomsTableDataGridView)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Button5)
@@ -222,6 +298,9 @@ Partial Class ManagementRooms
         Me.Text = "Form1"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.HotelsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RoomsTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RoomsTableDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -243,4 +322,14 @@ Partial Class ManagementRooms
     Friend WithEvents ClientsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RoomsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ReservationsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents HotelsDataSet As HotelManagements.hotelsDataSet
+    Friend WithEvents RoomsTableBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents RoomsTableTableAdapter As HotelManagements.hotelsDataSetTableAdapters.RoomsTableTableAdapter
+    Friend WithEvents TableAdapterManager As HotelManagements.hotelsDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents RoomsTableDataGridView As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

@@ -30,8 +30,6 @@ Partial Class ManagementClients
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer
         Me.ClientsTableDataGridView = New System.Windows.Forms.DataGridView
-        Me.ClientsTableBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HotelsDataSet1 = New HotelManagements.hotelsDataSet
         Me.Panel2 = New System.Windows.Forms.Panel
         Me.Label2 = New System.Windows.Forms.Label
         Me.EmailTextBox1 = New System.Windows.Forms.TextBox
@@ -41,25 +39,27 @@ Partial Class ManagementClients
         Me.RemoveButton = New System.Windows.Forms.Button
         Me.EditButton = New System.Windows.Forms.Button
         Me.AddButton = New System.Windows.Forms.Button
-        Me.ClientsTableAdapter = New HotelManagements.hotelsDataSetTableAdapters.ClientsTableTableAdapter
-        Me.TableAdapterManager1 = New HotelManagements.hotelsDataSetTableAdapters.TableAdapterManager
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.ClientsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.RoomsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ReservationsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ClientsTableBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HotelsDataSet1 = New HotelManagements.hotelsDataSet
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ClientsTableAdapter = New HotelManagements.hotelsDataSetTableAdapters.ClientsTableTableAdapter
+        Me.TableAdapterManager1 = New HotelManagements.hotelsDataSetTableAdapters.TableAdapterManager
         Me.Panel1.SuspendLayout()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
         CType(Me.ClientsTableDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ClientsTableBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.HotelsDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.ClientsTableBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HotelsDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'First_nameLabel
@@ -134,16 +134,6 @@ Partial Class ManagementClients
         Me.ClientsTableDataGridView.Name = "ClientsTableDataGridView"
         Me.ClientsTableDataGridView.Size = New System.Drawing.Size(413, 439)
         Me.ClientsTableDataGridView.TabIndex = 0
-        '
-        'ClientsTableBindingSource1
-        '
-        Me.ClientsTableBindingSource1.DataMember = "ClientsTable"
-        Me.ClientsTableBindingSource1.DataSource = Me.HotelsDataSet1
-        '
-        'HotelsDataSet1
-        '
-        Me.HotelsDataSet1.DataSetName = "hotelsDataSet"
-        Me.HotelsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Panel2
         '
@@ -233,16 +223,6 @@ Partial Class ManagementClients
         Me.AddButton.Text = "New"
         Me.AddButton.UseVisualStyleBackColor = True
         '
-        'ClientsTableAdapter
-        '
-        Me.ClientsTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager1
-        '
-        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager1.Connection = Nothing
-        Me.TableAdapterManager1.UpdateOrder = HotelManagements.hotelsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientsToolStripMenuItem, Me.RoomsToolStripMenuItem, Me.ReservationsToolStripMenuItem})
@@ -270,29 +250,15 @@ Partial Class ManagementClients
         Me.ReservationsToolStripMenuItem.Size = New System.Drawing.Size(85, 20)
         Me.ReservationsToolStripMenuItem.Text = "Reservations"
         '
-        'DataGridViewTextBoxColumn5
+        'ClientsTableBindingSource1
         '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "email"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "email"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.ClientsTableBindingSource1.DataMember = "ClientsTable"
+        Me.ClientsTableBindingSource1.DataSource = Me.HotelsDataSet1
         '
-        'DataGridViewTextBoxColumn4
+        'HotelsDataSet1
         '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "phone"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "phone"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "last_name"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "last_name"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "first_name"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "first_name"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.HotelsDataSet1.DataSetName = "hotelsDataSet"
+        Me.HotelsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'DataGridViewTextBoxColumn1
         '
@@ -300,6 +266,40 @@ Partial Class ManagementClients
         Me.DataGridViewTextBoxColumn1.HeaderText = "id"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.Width = 30
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "first_name"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "first_name"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "last_name"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "last_name"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "phone"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "phone"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "email"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "email"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'ClientsTableAdapter
+        '
+        Me.ClientsTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.Connection = Nothing
+        Me.TableAdapterManager1.UpdateOrder = HotelManagements.hotelsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'ManagementClients
         '
@@ -314,12 +314,12 @@ Partial Class ManagementClients
         Me.ToolStripContainer1.ResumeLayout(False)
         Me.ToolStripContainer1.PerformLayout()
         CType(Me.ClientsTableDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ClientsTableBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.HotelsDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.ClientsTableBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HotelsDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
