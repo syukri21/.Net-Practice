@@ -1,0 +1,24 @@
+C:\Users\UKI\AppData\Local\Temporary Projects\HotelManagements\bin\Debug\HotelManagements.exe.config
+C:\Users\UKI\AppData\Local\Temporary Projects\HotelManagements\bin\Debug\HotelManagements.exe
+C:\Users\UKI\AppData\Local\Temporary Projects\HotelManagements\bin\Debug\HotelManagements.pdb
+C:\Users\UKI\AppData\Local\Temporary Projects\HotelManagements\bin\Debug\HotelManagements.xml
+C:\Users\UKI\AppData\Local\Temporary Projects\HotelManagements\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\UKI\AppData\Local\Temporary Projects\HotelManagements\obj\Debug\HotelManagements.Form1.resources
+C:\Users\UKI\AppData\Local\Temporary Projects\HotelManagements\obj\Debug\HotelManagements.Resources.resources
+C:\Users\UKI\AppData\Local\Temporary Projects\HotelManagements\obj\Debug\HotelManagements.vbproj.GenerateResource.Cache
+C:\Users\UKI\AppData\Local\Temporary Projects\HotelManagements\obj\Debug\HotelManagements.exe
+C:\Users\UKI\AppData\Local\Temporary Projects\HotelManagements\obj\Debug\HotelManagements.xml
+C:\Users\UKI\AppData\Local\Temporary Projects\HotelManagements\obj\Debug\HotelManagements.pdb
+G:\Semester2\VB\HotelManagements\HotelManagements\bin\Debug\HotelManagements.exe.config
+G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\HotelManagements.exe
+G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\HotelManagements.xml
+G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\HotelManagements.pdb
+G:\Semester2\VB\HotelManagements\HotelManagements\bin\Debug\HotelManagements.exe
+G:\Semester2\VB\HotelManagements\HotelManagements\bin\Debug\HotelManagements.pdb
+G:\Semester2\VB\HotelManagements\HotelManagements\bin\Debug\HotelManagements.xml
+G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\ResolveAssemblyReference.cache
+G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\HotelManagements.Resources.resources
+G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\HotelManagements.vbproj.GenerateResource.Cache
+G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\HotelManagements.ManagementClients.resources
+G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\HotelManagements.Signin.resources
+G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\HotelManagements.ManagementRooms.resources
