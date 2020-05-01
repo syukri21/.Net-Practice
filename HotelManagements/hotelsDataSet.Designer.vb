@@ -2127,11 +2127,20 @@ Namespace hotelsDataSetTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.Odbc.OdbcCommand(0) {}
+            Me._commandCollection = New Global.System.Data.Odbc.OdbcCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.Odbc.OdbcCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        rooms.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            rooms"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.Odbc.OdbcCommand
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "INSERT INTO rooms"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (number, type, phone, reserved)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALU"& _ 
+                "ES        (?, ?, ?, ?)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("reserved", Global.System.Data.Odbc.OdbcType.Int, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "reserved", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Param2", Global.System.Data.Odbc.OdbcType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Param3", Global.System.Data.Odbc.OdbcType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.Odbc.OdbcParameter("Param4", Global.System.Data.Odbc.OdbcType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2154,6 +2163,43 @@ Namespace hotelsDataSetTableAdapters
             Dim dataTable As hotelsDataSet.RoomsTableDataTable = New hotelsDataSet.RoomsTableDataTable
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function InsertQuery(ByVal reserved As Integer, ByVal Param2 As String, ByVal Param3 As String, ByVal Param4 As String) As Integer
+            Dim command As Global.System.Data.Odbc.OdbcCommand = Me.CommandCollection(1)
+            command.Parameters(0).Value = CType(reserved,Integer)
+            If (Param2 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Param2")
+            Else
+                command.Parameters(1).Value = CType(Param2,String)
+            End If
+            If (Param3 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Param3")
+            Else
+                command.Parameters(2).Value = CType(Param3,String)
+            End If
+            If (Param4 Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Param4")
+            Else
+                command.Parameters(3).Value = CType(Param4,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     
