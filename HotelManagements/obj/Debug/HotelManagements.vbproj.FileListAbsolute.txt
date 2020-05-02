@@ -22,3 +22,4 @@ G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\HotelManagements.vbp
 G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\HotelManagements.ManagementClients.resources
 G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\HotelManagements.Signin.resources
 G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\HotelManagements.ManagementRooms.resources
+G:\Semester2\VB\HotelManagements\HotelManagements\obj\Debug\HotelManagements.ManagementsReservations.resources

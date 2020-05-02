@@ -80,4 +80,10 @@
         Me.RoomsTableTableAdapter.UpdateQuery(number, type, phone, reserved, id)
         Me.RoomsTableTableAdapter.Fill(Me.HotelsDataSet.RoomsTable)
     End Sub
+
+    Private Sub ReservationsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReservationsToolStripMenuItem.Click
+        Me.Close()
+        ManagementsReservations.Show()
+
+    End Sub
 End Class
