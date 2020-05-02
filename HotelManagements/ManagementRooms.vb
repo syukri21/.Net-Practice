@@ -42,4 +42,42 @@
         Me.RoomsTableTableAdapter.InsertQuery(number, type, phone, reserved)
         Me.RoomsTableTableAdapter.Fill(Me.HotelsDataSet.RoomsTable)
     End Sub
+
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        Dim id As Integer = Me.RoomsTableDataGridView.CurrentRow.Cells(0).Value
+        Me.RoomsTableTableAdapter.DeleteQuery(id)
+        Me.RoomsTableTableAdapter.Fill(Me.HotelsDataSet.RoomsTable)
+    End Sub
+
+    Private Sub RoomsTableDataGridView_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles RoomsTableDataGridView.CellClick
+        Dim getCurrentCells = Me.RoomsTableDataGridView.CurrentRow.Cells
+        Dim number As Integer = getCurrentCells(1).Value
+        Dim type As String
+        Dim phone As String = getCurrentCells(3).Value
+        Me.Reserved = getCurrentCells(4).Value
+        If getCurrentCells(2).Value.Equals(1) Then
+            type = "Single"
+        Else
+            type = "Double"
+        End If
+        TextBox1.Text = number
+        TextBox3.Text = phone
+        ComboBox1.SelectedItem = type
+    End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        Dim id As Integer = Me.RoomsTableDataGridView.CurrentRow.Cells(0).Value
+        Dim number = TextBox1.Text
+        Dim phone = TextBox3.Text
+        Dim reserved = Me.Reserved
+        Dim type
+        Dim typeValue = ComboBox1.SelectedItem
+        If typeValue.Equals("Single") Then
+            type = 1
+        Else
+            type = 2
+        End If
+        Me.RoomsTableTableAdapter.UpdateQuery(number, type, phone, reserved, id)
+        Me.RoomsTableTableAdapter.Fill(Me.HotelsDataSet.RoomsTable)
+    End Sub
 End Class

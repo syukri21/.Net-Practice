@@ -41,7 +41,6 @@ Partial Class ManagementRooms
         Me.RoomsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ReservationsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.RoomsTableDataGridView = New System.Windows.Forms.DataGridView
-        Me.ManagementRoomsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -51,11 +50,12 @@ Partial Class ManagementRooms
         Me.HotelsDataSet = New HotelManagements.hotelsDataSet
         Me.RoomsTableTableAdapter = New HotelManagements.hotelsDataSetTableAdapters.RoomsTableTableAdapter
         Me.TableAdapterManager = New HotelManagements.hotelsDataSetTableAdapters.TableAdapterManager
+        Me.ManagementRoomsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MenuStrip1.SuspendLayout()
         CType(Me.RoomsTableDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ManagementRoomsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RoomsTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HotelsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ManagementRoomsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -226,10 +226,6 @@ Partial Class ManagementRooms
         Me.RoomsTableDataGridView.Size = New System.Drawing.Size(506, 229)
         Me.RoomsTableDataGridView.TabIndex = 16
         '
-        'ManagementRoomsBindingSource
-        '
-        Me.ManagementRoomsBindingSource.DataSource = GetType(HotelManagements.ManagementRooms)
-        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "id"
@@ -280,6 +276,10 @@ Partial Class ManagementRooms
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.UpdateOrder = HotelManagements.hotelsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'ManagementRoomsBindingSource
+        '
+        Me.ManagementRoomsBindingSource.DataSource = GetType(HotelManagements.ManagementRooms)
+        '
         'ManagementRooms
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -306,9 +306,9 @@ Partial Class ManagementRooms
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.RoomsTableDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ManagementRoomsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RoomsTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HotelsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ManagementRoomsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
